@@ -17,7 +17,7 @@ setuptools.setup(
     author='Onlaw (Jens Madsen)',
     author_email='jens@onlaw.dk',
     name='prisma_helpers',
-    version='0.1',
+    version='0.1.1',
     description='helpers function for interacting with prisma api using ayncio and aiohttp',
     long_description=README,
     packages=setuptools.find_packages(),
