@@ -1,11 +1,7 @@
-# coding: utf-8
-"""document example of usage
-"""
-
 import asyncio
 import json
-import graphql_connection
-import prisma_query_builders
+from . import graphql_connection
+from . import prisma_query_builders
 import logging
 
 logger = logging.getLogger(__name__)
