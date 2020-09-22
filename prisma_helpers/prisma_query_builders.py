@@ -1,4 +1,3 @@
-# coding: utf-8
 import json
 import enum
 import re
@@ -30,21 +29,13 @@ def build_all_of_type_queries(count_nodes,
         if limit < batch_size:
             batch_size = limit
 
-    number_of_batches = number_of_nodes // batch_size
-    last_batch_size = number_of_nodes % batch_size
-    if last_batch_size > 0:
-        number_of_batches += 1
-
-    if number_of_batches == 1:
-        last_batch_size = batch_size
-
     list_of_query_strings = []
-    for batch in range(number_of_batches):
 
+    for node in range(0, number_of_nodes, batch_size):
         first = batch_size
-        if batch == number_of_batches - 1:  # last batch
-            first = last_batch_size
-        skip = batch * batch_size
+        skip = node + offset
+        if node + batch_size > number_of_nodes:
+            first = number_of_nodes - node
 
         batch_key = 'p{}_{}'.format(str(skip),
                                     str(skip + first))
