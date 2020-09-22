@@ -1,6 +1,10 @@
 autopep8
 flake8
-pip-tools
 mypy
+pre-commit
+pip-tools
+setuptools
+twine
+wheel
 
--r requirements.in
+-r requirements.txt
